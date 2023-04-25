@@ -35,18 +35,30 @@ public class MayinTarlasi {
         System.out.println(" OYUN BAsALDI...");
         while (game) {
             print(board);
-            System.out.println("satır gir:");
-            row = scan.nextInt();
-            System.out.println("sutun gir:");
-            col = scan.nextInt();
+            while (true) {
+                System.out.println("satır gir:");
+                row = scan.nextInt();
+                System.out.println("sutun gir:");
+                col = scan.nextInt();
+                if (row > rowNumber || col > colNumber) {
+                    System.out.println("hatalı girdi ");
+
+                }
+                else if (row < 0 || col < 0) {
+                    System.out.println("hatalı girdi ");
+
+                } else
+                    break;
+
+            }
             if (map[row][col] != -1) {
                 check(row, col);
             } else {
                 game = false;
                 System.out.println("OYUN bitti");
             }
-        }
 
+        }
     }
 
     // mayınların nerde olduğunu kontrol ediyo ve etrafında kaç tane mayıın var bize
